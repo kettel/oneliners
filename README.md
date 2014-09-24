@@ -43,6 +43,32 @@ Remove all subdirs in DIRPATH
 	
 	find [DIRPATH] -d -type d -exec rm -rf '{}' \;
 
-Calculate nof rows in in all php-files in current dir and it's subdirs
+Calculate nof rows in in all php-files in current dir and its subdirs
 	
 	find . -name '*.php' | wc -l
+
+Use rsync instead of cp "IMO cp is outdated" : http://askubuntu.com/questions/17275/progress-and-speed-with-cp
+
+	alias cp="rsync -avz"
+
+List all connected disks
+	
+	(sudo) fdisk -l
+
+Tunnel SMB over SSH from host on on remote network to local machine on localhost:22000
+	
+	ssh -f -N -L 22000:[IP of SMB share in remote network]:139 [remote user]@[remote SSH server] -p [remote SSH port]
+
+Reverse SSH tunnel (to bypass firewall). Sets up 51021 on remote server as SSH-port
+
+	ssh -nNTR 51021:localhost:22 [remote user]@[remote SSH server] -p [remote SSH port]
+
+To connect to above, on the remote SSH-server just use
+	
+	ssh [forwarded user]@127.0.0.1 -p 51021
+
+And remember, autossh > ssh! Just replace ssh with autossh.
+
+Start screen in background running some process
+
+	screen -S [desired screen session name] -d -m -- sh -c '[Command to run]'
