@@ -72,3 +72,8 @@ And remember, autossh > ssh! Just replace ssh with autossh.
 Start screen in background running some process
 
 	screen -S [desired screen session name] -d -m -- sh -c '[Command to run]'
+
+Clone one disk (/dev/sdd) to another (/dev/sdc) with dd and progress bar with pv 
+(https://wiki.archlinux.org/index.php/disk_cloning#Cloning_an_entire_hard_disk)
+
+	sudo pv -tpreb /dev/sdd | sudo dd of=/dev/sdc bs=4096 conv=notrunc,noerror,sync
