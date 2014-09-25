@@ -77,3 +77,11 @@ Clone one disk (/dev/sdd) to another (/dev/sdc) with dd and progress bar with pv
 (https://wiki.archlinux.org/index.php/disk_cloning#Cloning_an_entire_hard_disk)
 
 	sudo pv -tpreb /dev/sdd | sudo dd of=/dev/sdc bs=4096 conv=notrunc,noerror,sync
+
+Scale image based on width
+	
+	convert --resize [WIDTH] [orig image] [new image]
+
+Get info on image (dimensions and more)
+
+	identify [image]
