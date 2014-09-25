@@ -80,7 +80,7 @@ Clone one disk (/dev/sdd) to another (/dev/sdc) with dd and progress bar with pv
 
 Scale image based on width
 	
-	convert --resize [WIDTH] [orig image] [new image]
+	convert -resize [WIDTH] [orig image] [new image]
 
 Get info on image (dimensions and more)
 
