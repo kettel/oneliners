@@ -85,3 +85,9 @@ Scale image based on width
 Get info on image (dimensions and more)
 
 	identify [image]
+
+Using MATE-desktop, switch places of window-menu and close,max,min buttons
+(note: you may found lots of examples using mateconftool-2 which seems to be
+deprecated)
+
+	dconf write /org/mate/marco/general/button-layout "'close,maximize,minimize:menu'"
