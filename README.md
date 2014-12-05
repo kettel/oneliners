@@ -91,3 +91,11 @@ Using MATE-desktop, switch places of window-menu and close,max,min buttons
 deprecated)
 
 	dconf write /org/mate/marco/general/button-layout "'close,maximize,minimize:menu'"
+
+Get external IP using Lynx
+
+	lynx -dump ping.eu | grep 'Your IP is' | awk '{print $4}'
+
+Get external IP with curl
+
+	curl -s ping.eu | grep 'Your IP is' | sed -e 's/.*<b>\(.*\)<\/b>/\1/g'
